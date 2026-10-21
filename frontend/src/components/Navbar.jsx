@@ -54,7 +54,13 @@ export default function Navbar() {
   return (
     <header className="nb-navbar">
       <Link className="nb-navbar__brand" to="/">
-        Skillign<span className="nb-navbar__dot" aria-hidden="true">.</span>
+        <img
+          className="nb-navbar__brand-logo"
+          src="/logo.svg"
+          alt="Skillign"
+          width="64"
+          height="64"
+        />
       </Link>
 
       <nav className="nb-navbar__nav" aria-label="Principal">

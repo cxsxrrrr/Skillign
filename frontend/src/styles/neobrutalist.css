@@ -544,7 +544,7 @@ html { scroll-behavior: smooth; }
 
 /* Navbar extensions */
 .nb-navbar__nav { display: contents; }
-.nb-navbar__dot { color: var(--nb-ink); }
+.nb-navbar__brand-logo { display: block; width: auto; height: 2.75rem; }
 .nb-navbar__tools { display: flex; align-items: stretch; }
 .nb-navbar__count {
   display: inline-grid;
@@ -1071,6 +1071,7 @@ body.nb-auth-body { background: var(--nb-ink); }
 /* Responsive */
 @media (max-width: 56rem) {
   .nb-navbar__menu { display: block; }
+  .nb-navbar__brand-logo { height: 2.25rem; }
   .nb-navbar__user { min-width: 0; margin-left: 0; padding: 0 var(--nb-s-3); }
   .nb-navbar__username { display: none; }
   .nb-navbar__user .nb-avatar { width: 2rem; height: 2rem; }
