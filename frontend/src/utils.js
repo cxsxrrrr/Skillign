@@ -4,7 +4,7 @@ export function useDocumentTitle(title) {
   useEffect(() => {
     document.title = title
       ? `${title} · Skillign`
-      : "Skillign · Catálogo de skills frontend";
+      : "Skillign · Skills frontend para IA";
   }, [title]);
 }
 

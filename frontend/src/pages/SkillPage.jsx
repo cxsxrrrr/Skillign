@@ -172,29 +172,8 @@ export default function SkillPage() {
           <h1 className="nb-detail__title">{skill.name}</h1>
           <p className="nb-detail__lead">{skill.summary}</p>
 
-          <dl className="nb-meta">
-            <div className="nb-meta__item">
-              <dt>
-                <Icon name="layers" /> Nivel
-              </dt>
-              <dd>{skill.level}</dd>
-            </div>
-            <div className="nb-meta__item">
-              <dt>
-                <Icon name="clock" /> Duración
-              </dt>
-              <dd>{skill.duration}</dd>
-            </div>
-            <div className="nb-meta__item">
-              <dt>
-                <Icon name="code" /> Formato
-              </dt>
-              <dd>{skill.format}</dd>
-            </div>
-          </dl>
-
           <section className="nb-detail__section">
-            <h2 className="nb-detail__section-title">Lo que aprenderás</h2>
+            <h2 className="nb-detail__section-title">Capacidades</h2>
             <ul className="nb-topics">
               {skill.topics.map((topic) => (
                 <li className="nb-topics__item" key={topic}>
@@ -205,7 +184,7 @@ export default function SkillPage() {
           </section>
 
           <section className="nb-detail__section">
-            <h2 className="nb-detail__section-title">Recursos recomendados</h2>
+            <h2 className="nb-detail__section-title">Recursos</h2>
             <ul className="nb-resources">
               {skill.resources.map((resource) => (
                 <li key={resource.url}>

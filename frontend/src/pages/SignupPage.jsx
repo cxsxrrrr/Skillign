@@ -46,8 +46,8 @@ export default function SignupPage() {
 
   return (
     <AuthLayout
-      showcaseTitle="Aprende con intención."
-      showcaseText="Guarda skills, vuelve a ellas y construye tu propia ruta."
+      showcaseTitle="Skills listas para tu agente."
+      showcaseText="Explora, guarda y reutiliza skills de frontend para IA."
     >
       <form className="nb-auth__form" onSubmit={handleSubmit} noValidate>
         <FlashGroup items={formError ? [{ type: "error", message: formError }] : []} />

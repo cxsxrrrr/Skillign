@@ -82,6 +82,9 @@ def test_catalog_payload(client):
     assert first["cover"]["lines"]
     assert first["resources"][0]["url"] == "/neobrutalist-css-ui.skill"
     assert "search_text" not in first
+    assert "level" not in first
+    assert "duration" not in first
+    assert "format" not in first
 
 
 def test_catalog_search_is_accent_insensitive(client):

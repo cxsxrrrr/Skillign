@@ -1,6 +1,6 @@
 # Skillign
 
-Catálogo de skills de frontend con frontend **React + Vite** y backend **Flask**. La interfaz usa el sistema de diseño neobrutalista de la skill `neobrutalist-css-ui`: CSS plano con tokens, bordes negros de 2px, sombras duras y pantallas de autenticación split-screen con orbes.
+Catálogo de skills de frontend para agentes de IA con frontend **React + Vite** y backend **Flask**. La interfaz usa el sistema de diseño neobrutalista de la skill `neobrutalist-css-ui`: CSS plano con tokens, bordes negros de 2px, sombras duras y pantallas de autenticación split-screen con orbes.
 
 ## Stack
 
