@@ -499,47 +499,49 @@ html { scroll-behavior: smooth; }
   padding: var(--nb-s-5);
   background: var(--nb-paper);
 }
-.nb-boot__mark {
+.nb-logo-loader {
   display: grid;
-  place-items: center;
-  width: 4rem;
-  height: 4rem;
-  border: var(--nb-border);
-  border-radius: var(--nb-radius-card);
-  background: var(--nb-ink);
-  color: var(--nb-paper);
-  box-shadow: var(--nb-shadow);
-  font-family: var(--nb-font-display);
-  font-size: 2rem;
-  font-weight: 800;
-}
-.nb-loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-items: center;
   gap: var(--nb-s-3);
   padding: var(--nb-s-7) var(--nb-s-4);
+}
+.nb-logo-loader__stage {
+  display: grid;
+  place-items: center;
+  height: 1.1em;
+  overflow: hidden;
+  font-family: "Anton", "Arial Narrow", Impact, sans-serif;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  line-height: 1;
+  color: var(--nb-ink);
+  perspective: 40rem;
+}
+.nb-logo-loader__word {
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-transform: lowercase;
+}
+.nb-logo-loader__letter {
+  display: inline-block;
+  transform-origin: 50% 100%;
+  animation: nb-logo-turn 680ms var(--nb-ease) both;
+}
+.nb-logo-loader__label {
   font-family: var(--nb-font-mono);
   font-size: var(--nb-fs-xs);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--nb-text-muted);
 }
-.nb-loading__bars { display: flex; gap: 4px; }
-.nb-loading__bar {
-  width: 8px;
-  height: 8px;
-  background: var(--nb-ink);
-  animation: nb-pulse 900ms var(--nb-ease) infinite alternate;
-}
-.nb-loading__bar:nth-child(2) { animation-delay: 180ms; }
-.nb-loading__bar:nth-child(3) { animation-delay: 360ms; }
-@keyframes nb-pulse {
-  from { opacity: 0.2; transform: translateY(0); }
-  to { opacity: 1; transform: translateY(-3px); }
+@keyframes nb-logo-turn {
+  0% { opacity: 0; transform: translateY(55%) rotateX(-75deg); }
+  60% { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0) rotateX(0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .nb-loading__bar { animation: none; }
+  .nb-logo-loader__letter { animation: none; }
 }
 
 /* Navbar extensions */
