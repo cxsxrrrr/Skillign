@@ -344,11 +344,11 @@ def test_cors_allows_firebase_origin_with_credentials(client):
     response = client.options(
         "/api/session",
         headers={
-            "Origin": "https://skillign.web.app",
+            "Origin": "https://skillign-ai.web.app",
             "Access-Control-Request-Method": "GET",
         },
     )
-    assert response.headers["Access-Control-Allow-Origin"] == "https://skillign.web.app"
+    assert response.headers["Access-Control-Allow-Origin"] == "https://skillign-ai.web.app"
     assert response.headers["Access-Control-Allow-Credentials"] == "true"
 
 
@@ -356,7 +356,7 @@ def test_cors_allows_csrf_header(client):
     response = client.options(
         "/api/auth/login",
         headers={
-            "Origin": "https://skillign.web.app",
+            "Origin": "https://skillign-ai.web.app",
             "Access-Control-Request-Method": "POST",
             "Access-Control-Request-Headers": "content-type,x-csrf-token",
         },

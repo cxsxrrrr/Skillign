@@ -52,7 +52,7 @@ def create_app(test_config=None):
         in {"1", "true", "yes"},
         CORS_ORIGINS=os.environ.get(
             "CORS_ORIGINS",
-            "http://localhost:5173,http://127.0.0.1:5173,https://skillign.web.app",
+            "http://localhost:5173,http://127.0.0.1:5173,https://skillign-ai.web.app",
         ),
         MAX_CONTENT_LENGTH=1_000_000,
         FRONTEND_DIST=os.environ.get(
