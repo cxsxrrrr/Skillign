@@ -1,0 +1,87 @@
+/* ==========================================================================
+   NEOBRUTALIST CSS UI — DESIGN TOKENS
+   Single source of truth. Never hardcode these values in components.
+   ========================================================================== */
+
+:root {
+  /* --- Color: ink & paper -------------------------------------------- */
+  --nb-ink: #000000;            /* borders, hard shadows, solid buttons, dark panels */
+  --nb-ink-soft: #1a1a1a;       /* hover on solid black surfaces */
+  --nb-paper: #ffffff;          /* cards, navbar, outline buttons */
+  --nb-bg: #fafafa;             /* neutral page / form-panel background */
+  --nb-bg-tint: #f4f8ff;        /* cool-tinted panel (login variant) */
+  --nb-field: #f5f7fb;          /* input background (neutral variant) */
+  --nb-field-tint: #eff4fe;     /* input background (on tinted panel) */
+
+  /* --- Color: text ----------------------------------------------------- */
+  --nb-text: #000000;
+  --nb-text-muted: #6b7280;     /* subtitles, helper copy */
+  --nb-text-faint: #b8bccb;     /* placeholders, decorative icons */
+  --nb-text-on-dark: #ffffff;
+  --nb-text-on-dark-muted: #c9ccd6;
+
+  /* --- Color: orb (auth showcase panel) -------------------------------- */
+  --nb-orb-ring-a: #d2d2dd;
+  --nb-orb-ring-b: #f3f3ff;
+  --nb-orb-core-a: #9f9fae;
+  --nb-orb-core-b: #c0c0cb;
+  --nb-orb-dark-tint: #14143a;
+
+  /* --- Color: state ---------------------------------------------------- */
+  --nb-focus: #3b5bff;          /* focus ring only; the one allowed accent */
+  --nb-danger: #e5322d;
+  --nb-success: #12a150;
+
+  /* --- Stroke & hard shadow -------------------------------------------- */
+  --nb-border-w: 2px;
+  --nb-border: var(--nb-border-w) solid var(--nb-ink);
+  --nb-shadow-x: 4px;
+  --nb-shadow-y: 4px;
+  --nb-shadow: var(--nb-shadow-x) var(--nb-shadow-y) 0 0 var(--nb-ink);          /* cards */
+  --nb-shadow-lg: 6px 6px 0 0 var(--nb-ink);                                      /* hover */
+  --nb-shadow-input: 2px 4px 0 0 var(--nb-ink);                                   /* fields: heavier at the bottom */
+  --nb-shadow-double: 3px 3px 0 0 var(--nb-paper), 3px 3px 0 2px var(--nb-ink);   /* "stacked outline" buttons */
+  --nb-shadow-nav: 0 2px 4px rgba(0, 0, 0, 0.25);                                 /* the ONLY soft shadow */
+
+  /* --- Radius ---------------------------------------------------------- */
+  --nb-radius-xs: 4px;          /* checkbox */
+  --nb-radius-sm: 8px;          /* inputs, buttons, user block */
+  --nb-radius-card: 2px;        /* cards stay almost square */
+  --nb-radius-frame: 24px;      /* outer auth frame */
+  --nb-radius-full: 999px;
+
+  /* --- Typography ------------------------------------------------------ */
+  --nb-font-ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --nb-font-display: "Montserrat", "Inter", system-ui, sans-serif;
+  --nb-font-mono: "Space Mono", "JetBrains Mono", ui-monospace, "Courier New", monospace;
+
+  --nb-fs-xs: 0.6875rem;   /* 11px  mono descriptions (floor for legibility) */
+  --nb-fs-sm: 0.8125rem;   /* 13px  helper text, links */
+  --nb-fs-md: 1rem;        /* 16px  body, inputs, buttons */
+  --nb-fs-lg: 1.125rem;    /* 18px  nav links, section titles */
+  --nb-fs-xl: 1.75rem;     /* 28px  form headings */
+  --nb-fs-2xl: 2.25rem;    /* 36px  page title badge */
+
+  /* --- Spacing (4px scale) -------------------------------------------- */
+  --nb-s-1: 0.25rem;
+  --nb-s-2: 0.5rem;
+  --nb-s-3: 0.75rem;
+  --nb-s-4: 1rem;
+  --nb-s-5: 1.5rem;
+  --nb-s-6: 2rem;
+  --nb-s-7: 3rem;
+  --nb-s-8: 4rem;
+
+  /* --- Motion ---------------------------------------------------------- */
+  --nb-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --nb-dur: 120ms;
+
+  /* --- Component sizing ----------------------------------------------- */
+  --nb-nav-h: 4.5rem;
+  --nb-field-h: 3.25rem;
+  --nb-card-w: 9.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --nb-dur: 0ms; }
+}

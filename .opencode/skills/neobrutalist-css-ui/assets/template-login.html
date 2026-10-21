@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="neobrutalist.css">
+</head>
+<body class="nb" style="background:#000">
+  <main class="nb-auth">
+    <section class="nb-auth__form-panel nb-auth__form-panel--tint">
+      <form class="nb-auth__form" novalidate>
+        <div>
+          <h1 class="nb-auth__heading">Login to your Account</h1>
+        </div>
+        <p class="nb-auth__subheading">Welcome back! Select method to log in:</p>
+
+        <div class="nb-auth__providers">
+          <button type="button" class="nb-btn nb-btn--outline">
+            <!-- Replace with official Google "G" SVG -->
+            <svg class="nb-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>
+            Google
+          </button>
+          <button type="button" class="nb-btn nb-btn--outline">
+            <svg class="nb-icon" viewBox="0 0 24 24" aria-hidden="true" style="stroke:none">
+              <rect x="2" y="2" width="9.5" height="9.5" fill="#f25022"/><rect x="12.5" y="2" width="9.5" height="9.5" fill="#7fba00"/>
+              <rect x="2" y="12.5" width="9.5" height="9.5" fill="#00a4ef"/><rect x="12.5" y="12.5" width="9.5" height="9.5" fill="#ffb900"/>
+            </svg>
+            Microsoft
+          </button>
+        </div>
+
+        <div class="nb-divider">or continue with email</div>
+
+        <label class="nb-field nb-field--tint">
+          <span class="nb-sr-only">Email</span>
+          <svg class="nb-icon nb-field__icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <input class="nb-field__input" type="email" placeholder="Email" autocomplete="email" required>
+        </label>
+
+        <label class="nb-field nb-field--tint">
+          <span class="nb-sr-only">Password</span>
+          <svg class="nb-icon nb-field__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          <input class="nb-field__input" type="password" placeholder="Password" autocomplete="current-password" required>
+          <button type="button" class="nb-field__action" aria-label="Show password">
+            <svg class="nb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+          </button>
+        </label>
+
+        <div class="nb-auth__row">
+          <label class="nb-check"><input class="nb-check__box" type="checkbox"> Remember me</label>
+          <a class="nb-link" href="forgot-password.html">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="nb-btn nb-btn--solid nb-btn--block">Log in</button>
+
+        <p class="nb-auth__footer">Don’t have account? <a class="nb-link" href="#">Create an account</a></p>
+      </form>
+    </section>
+
+    <aside class="nb-showcase nb-showcase--dark" aria-label="Product highlights">
+      <div class="nb-orb nb-orb--dark" role="presentation"></div>
+      <div class="nb-showcase__caption">
+        <h2 class="nb-showcase__title">Connect with any device.</h2>
+        <p class="nb-showcase__text">Everything you need is an internet connection.</p>
+        <div class="nb-dots" role="tablist">
+          <button class="nb-dots__dot" aria-current="true" aria-label="Slide 1"></button>
+          <button class="nb-dots__dot" aria-label="Slide 2"></button>
+          <button class="nb-dots__dot" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
