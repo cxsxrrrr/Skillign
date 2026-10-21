@@ -1,4 +1,7 @@
-const API_BASE = "/api";
+const configuredApiUrl = (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
+const API_BASE = configuredApiUrl.endsWith("/api")
+  ? configuredApiUrl
+  : `${configuredApiUrl}/api`;
 
 let csrfToken = "";
 
@@ -27,7 +30,7 @@ export async function request(path, { method = "GET", body, signal } = {}) {
   const response = await fetch(`${API_BASE}${path}`, {
     method,
     headers,
-    credentials: "same-origin",
+    credentials: "include",
     body: body !== undefined ? JSON.stringify(body) : undefined,
     signal,
   });

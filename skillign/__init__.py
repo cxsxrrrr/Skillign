@@ -12,6 +12,7 @@ from flask import (
     send_from_directory,
     session,
 )
+from flask_cors import CORS
 from werkzeug.security import generate_password_hash
 
 from . import db
@@ -46,7 +47,13 @@ def create_app(test_config=None):
         SEED_DEMO=os.environ.get("SEED_DEMO", "1") == "1",
         PERMANENT_SESSION_LIFETIME=timedelta(days=14),
         SESSION_COOKIE_HTTPONLY=True,
-        SESSION_COOKIE_SAMESITE="Lax",
+        SESSION_COOKIE_SAMESITE=os.environ.get("SESSION_COOKIE_SAMESITE", "Lax"),
+        SESSION_COOKIE_SECURE=os.environ.get("SESSION_COOKIE_SECURE", "0").lower()
+        in {"1", "true", "yes"},
+        CORS_ORIGINS=os.environ.get(
+            "CORS_ORIGINS",
+            "http://localhost:5173,http://127.0.0.1:5173,https://skillign.web.app",
+        ),
         MAX_CONTENT_LENGTH=1_000_000,
         FRONTEND_DIST=os.environ.get(
             "FRONTEND_DIST", str(project_root / "frontend" / "dist")
@@ -57,6 +64,17 @@ def create_app(test_config=None):
 
     os.makedirs(app.instance_path, exist_ok=True)
     db.init_app(app)
+
+    cors_origins = app.config["CORS_ORIGINS"]
+    if isinstance(cors_origins, str):
+        cors_origins = [origin.strip() for origin in cors_origins.split(",") if origin.strip()]
+    CORS(
+        app,
+        resources={r"/api/*": {"origins": cors_origins}},
+        supports_credentials=True,
+        methods=["GET", "POST", "OPTIONS"],
+        allow_headers=["Content-Type", "X-CSRF-Token"],
+    )
 
     from .auth import bp as auth_bp
     from .views import bp as api_bp

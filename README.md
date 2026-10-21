@@ -53,6 +53,39 @@ python app.py
 
 Abre `http://127.0.0.1:5000`: Flask sirve `frontend/dist` y la API en el mismo origen. Si cambias el frontend, vuelve a ejecutar `npm run build`.
 
+## Firebase + VPS
+
+El frontend se publica en Firebase Hosting (`skillign.web.app`) y la API Flask corre en un VPS con HTTPS.
+
+### Backend en el VPS
+
+Configura estas variables antes de arrancar Flask:
+
+```powershell
+$env:SECRET_KEY = "una-clave-larga-y-aleatoria"
+$env:CORS_ORIGINS = "https://skillign.web.app"
+$env:SESSION_COOKIE_SECURE = "1"
+$env:SESSION_COOKIE_SAMESITE = "None"
+$env:SEED_DEMO = "0"
+$env:SHOW_OTP = "0"
+```
+
+La API debe servirse por HTTPS: la cookie de sesión cross-site usa `SameSite=None; Secure`. El dominio del VPS debe estar disponible antes de compilar el frontend.
+
+### Frontend en Firebase
+
+```powershell
+cd frontend
+$env:VITE_API_URL = "https://api.tudominio.com"
+npm run build
+cd ..
+npx firebase-tools deploy --only hosting --project skillign
+```
+
+`firebase.json` ya configura el rewrite de SPA y el caché de assets. El proyecto de Firebase debe llamarse `skillign` para que el sitio sea `https://skillign.web.app`.
+
+El login con cuenta y la recuperación por OTP necesitan que el VPS tenga SMTP configurado o `SHOW_OTP=1` en un entorno de demostración.
+
 ### Cuenta de demostración
 
 - Email: `demo@skillign.dev`
